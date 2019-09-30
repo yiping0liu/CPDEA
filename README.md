@@ -8,3 +8,6 @@ The codes use [PlatEMO](https://github.com/BIMK/PlatEMO) [(v1.6)](https://github
 Please drop IDMP and CPDEA into .\Problems and .\Algorithms, respectively. Then Enjoy. 
 
 Please contact yiping0liu@gmail.com if you have any problem.
+
+Updated 9/30/2019
+The PF and PS of IDMP are uploaded.
