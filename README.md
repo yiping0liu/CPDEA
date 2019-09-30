@@ -9,5 +9,5 @@ Please drop IDMP and CPDEA into .\Problems and .\Algorithms, respectively. Then 
 
 Please contact yiping0liu@gmail.com if you have any problem.
 
-Updated 9/30/2019
+Updated 9/30/2019:
 The PF and PS of IDMP are uploaded.
