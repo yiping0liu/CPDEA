@@ -1,25 +1,20 @@
-function [Population,Del,fCPD,LocalC] = CPDSelection(Population,K,eta,D_Dec,DominationX,Global)
+function [Population,Del,fCPD,LocalC] = CPDSelection(Population,K,eta,D_Dec,DominationX,Prob)
 % CPD based environmental selection in CPDEA
 
-%--------------------------------------------------------------------------
-% Copyright 2018-2019 Yiping Liu
-% This is the code of CPDEA proposed in "Yiping Liu, Hisao Ishibuchi, Gary
-% G. Yen, Yusuke Nojima and Naoki Masuyama, Handling Imbalance Between 
-% Convergence and Diversity in the Decision Space in Evolutionary Multi-
-% Modal Multi-Objective Optimization, IEEE Transactions on Evolutionary 
-% Computation, 2019, Early Access, DOI: 10.1109/TEVC.2019.2938557".
+%------------------------------- Reference --------------------------------
+% Liu, Y., Ishibuchi, H., Yen, G.G., Nojima, Y. and Masuyama, N., 2020. 
+% Handling imbalance between convergence and diversity in the decision 
+% space in evolutionary multimodal multiobjective optimization. IEEE 
+% Transactions on Evolutionary Computation, 24(3), pp.551-565.
+%------------------------------- Copyright --------------------------------
+% Copyright Yiping Liu
 % Please contact {yiping0liu@gmail.com} if you have any problem.
-%--------------------------------------------------------------------------
-% This code uses PlatEMO published in "Ye Tian, Ran Cheng, Xingyi Zhang, 
-% and Yaochu Jin, PlatEMO: A MATLAB Platform for Evolutionary 
-% Multi-Objective Optimization [Educational Forum], IEEE Computational 
-% Intelligence Magazine, 2017, 12(4): 73-87".
 %--------------------------------------------------------------------------
 
 %% Local Convergence Quality 
 N = length(Population);
-V = prod(Global.upper - Global.lower);
-R = eta.*(V./N).^(1./Global.D);
+V = prod(Prob.upper - Prob.lower);
+R = eta.*(V./N).^(1./Prob.D);
 temp = exp(-D_Dec.^2./(2.*R.^2))./(R.*(2.*pi).^.5); % Normal_distribution
 LocalC = NaN(1,N);
 for i = 1:N

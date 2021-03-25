@@ -1,19 +1,14 @@
 function [Population,fDKN] = ArchiveUpdate(Population,N,K)
 % Archive Update in CPDEA
 
-%--------------------------------------------------------------------------
-% Copyright 2018-2019 Yiping Liu
-% This is the code of CPDEA proposed in "Yiping Liu, Hisao Ishibuchi, Gary
-% G. Yen, Yusuke Nojima and Naoki Masuyama, Handling Imbalance Between 
-% Convergence and Diversity in the Decision Space in Evolutionary Multi-
-% Modal Multi-Objective Optimization, IEEE Transactions on Evolutionary 
-% Computation, 2019, Early Access, DOI: 10.1109/TEVC.2019.2938557".
+%------------------------------- Reference --------------------------------
+% Liu, Y., Ishibuchi, H., Yen, G.G., Nojima, Y. and Masuyama, N., 2020. 
+% Handling imbalance between convergence and diversity in the decision 
+% space in evolutionary multimodal multiobjective optimization. IEEE 
+% Transactions on Evolutionary Computation, 24(3), pp.551-565.
+%------------------------------- Copyright --------------------------------
+% Copyright Yiping Liu
 % Please contact {yiping0liu@gmail.com} if you have any problem.
-%--------------------------------------------------------------------------
-% This code uses PlatEMO published in "Ye Tian, Ran Cheng, Xingyi Zhang, 
-% and Yaochu Jin, PlatEMO: A MATLAB Platform for Evolutionary 
-% Multi-Objective Optimization [Educational Forum], IEEE Computational 
-% Intelligence Magazine, 2017, 12(4): 73-87".
 %--------------------------------------------------------------------------
 
     FrontNo = NDSort(Population.objs,inf);   
